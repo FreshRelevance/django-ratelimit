@@ -4,10 +4,10 @@ from django.test import RequestFactory, TestCase
 from django.test.utils import override_settings
 from django.views.generic import View
 
-from ratelimit.decorators import ratelimit
-from ratelimit.exceptions import Ratelimited
-from ratelimit.mixins import RatelimitMixin
-from ratelimit.utils import is_ratelimited, _split_rate
+from django_ratelimit.decorators import ratelimit
+from django_ratelimit.exceptions import Ratelimited
+from django_ratelimit.mixins import RatelimitMixin
+from django_ratelimit.utils import is_ratelimited, _split_rate
 
 
 rf = RequestFactory()
@@ -310,7 +310,7 @@ class RatelimitTests(TestCase):
         assert view(auth), 'Second authenticated is limited.'
 
     def test_key_path(self):
-        @ratelimit(key='ratelimit.tests.mykey', rate='1/m')
+        @ratelimit(key='django_ratelimit.tests.mykey', rate='1/m')
         def view(request):
             return request.limited
 

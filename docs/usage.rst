@@ -12,7 +12,7 @@ Use as a decorator
 
 Import::
 
-    from ratelimit.decorators import ratelimit
+    from django_ratelimit.decorators import ratelimit
 
 
 .. py:decorator:: ratelimit(group=None, key=, rate=None, method=ALL, block=False)
@@ -56,7 +56,7 @@ There are two special shortcuts values, both accessible from the
 ``ratelimit`` decorator, the ``RatelimitMixin`` class, or the
 ``is_ratelimited`` helper, as well as on the root ``ratelimit`` module::
 
-    from ratelimit.decorators import ratelimit
+    from django_ratelimit.decorators import ratelimit
 
     @ratelimit(key='ip', method=ratelimit.ALL)
     @ratelimit(key='ip', method=ratelimit.UNSAFE)
@@ -202,7 +202,7 @@ the decorator.
 
 Import::
 
-    from ratelimit.utils import is_ratelimited
+    from django_ratelimit.utils import is_ratelimited
 
 
 .. py:function:: is_ratelimited(request, group=None, key=, rate=None, method=ALL, increment=False)
