@@ -1,7 +1,7 @@
 from __future__ import absolute_import
 
-from ratelimit import ALL, UNSAFE
-from ratelimit.decorators import ratelimit
+from django_ratelimit import ALL, UNSAFE
+from django_ratelimit.decorators import ratelimit
 
 
 __all__ = ['RatelimitMixin']

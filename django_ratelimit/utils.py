@@ -8,7 +8,7 @@ from django.conf import settings
 from django.core.cache import caches
 from django.core.exceptions import ImproperlyConfigured
 
-from ratelimit import ALL, UNSAFE
+from django_ratelimit import ALL, UNSAFE
 
 
 __all__ = ['is_ratelimited']
